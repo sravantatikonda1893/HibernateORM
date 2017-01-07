@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="beans.Voter" table="voter" schema="localoms">
+		<id name="vId" />
+		<property name="vName" />
+		<property name="vAge" />
+	</class>
+</hibernate-mapping>
+

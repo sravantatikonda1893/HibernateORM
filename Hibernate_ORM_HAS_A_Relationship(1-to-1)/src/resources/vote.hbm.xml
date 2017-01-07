@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="beans.Vote" table="vote" schema="localoms">
+		<!-- This generator is used for inserting a primary key of voter table 
+			as a primary key of vote -->
+		<id name="vtId">
+			<generator class="foreign">
+				<param name="property">voter</param>
+			</generator>
+		</id>
+
+		<property name="pName" />
+		<property name="castingDate" />
+		<!-- this specifies that the 'Vote' class has one to one relationship with 
+			'voter' -->
+		<one-to-one name="voter" class="beans.Vote" />
+	</set>
+	</class>
+</hibernate-mapping>
+

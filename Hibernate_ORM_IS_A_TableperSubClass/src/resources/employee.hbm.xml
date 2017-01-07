@@ -1,0 +1,35 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+
+	<class name="beans.Employee" table="employeetable" schema="localoms">
+		<id name="id" />
+		<property name="name" />
+		<property name="email" />
+		<property name="salary" />
+		<joined-subclass name="beans.SEmployee" table="Semployee">
+			<key column="id" />
+			<property name="tool" />
+			<!-- Using that table as a foreign key here -->
+			
+		</joined-subclass>
+
+		<joined-subclass name="beans.HEmployee" table="Hemployee">
+			<property name="wh" />
+			<key column="id" />
+			<!-- Using that table as a foreign key here -->
+	
+		</joined-subclass>
+		<joined-subclass name="beans.Admin" table="admin">
+			<key column="id" />
+			<property name="branchName" />
+			<!-- Using that table as a foreign key here -->
+			
+		</joined-subclass>
+
+	</class>
+
+
+
+</hibernate-mapping>

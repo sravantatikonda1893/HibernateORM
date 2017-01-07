@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="model.Faculty" table="faculty" schema="localoms">
+		<id name="fid" />
+		<property name="fname" />
+		<property name="exp" />
+		<!-- Asking hibernate to create a new table"facultycourse" and inserting 
+			2 columns- cid,fid -->
+			<!-- one faculty can have any number of courses  -->
+		<set name="courses" table="facultycourse">
+			<key column="fid" />
+			<many-to-many class="model.Course" column="cid" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+

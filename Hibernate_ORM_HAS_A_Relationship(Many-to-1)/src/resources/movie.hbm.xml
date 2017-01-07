@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="beans.Movies" table="movie" schema="localoms">
+		<id name="mid" />
+		<property name="moviename" />
+		<!-- here column attribute specifies it as a foreign key -->
+		<many-to-one name="actor" class="beans.Actor">
+		<column name="aid"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
+

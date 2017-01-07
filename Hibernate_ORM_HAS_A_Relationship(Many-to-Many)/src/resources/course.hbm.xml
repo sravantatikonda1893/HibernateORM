@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="model.Course" table="course" schema="localoms">
+		<id name="cid" />
+		<property name="cname" />
+		<property name="fee" />
+
+		<!-- creating a new table "facultycourse" and inserting 2 columns- cid,fid -->
+		<!-- one course can be taught by number of faculty -->
+
+		<set name="faculties" table="facultycourse">
+			<key column="cid" />
+			<many-to-many class="model.Faculty" column="fid" />
+		</set>
+	</class>
+</hibernate-mapping>
+

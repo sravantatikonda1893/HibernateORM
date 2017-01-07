@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<!-- we don't need table for parent class only the child class should be 
+		having a table separately each in mapping file and tables  will be created for all classes including parent class by hibernate -->
+	<class name="beans.Employee">
+		<id name="id" />
+		<discriminator column="etype" />
+		<property name="name" />
+		<property name="email" />
+		<property name="salary" />
+
+		<union-subclass class="beans.SEmployee" table="semployee">
+			<property name="tool" />
+		</union-subclass>
+
+		<union-subclass class="beans.HEmployee" table="hemployee">
+			<property name="wh" />
+		</union-subclass>
+
+		<union-subclass class="beans.Admin" table="admin">
+			<property name="branchName" />
+		</union-subclass>
+
+	</class>
+
+
+
+</hibernate-mapping>
+
+<!-- We can ue any of these three relationships -->

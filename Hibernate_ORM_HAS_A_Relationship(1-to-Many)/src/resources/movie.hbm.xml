@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-mappinf PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://ww.hibernate.org/dtd/hibernate-mapping-3.0 dtd">
+<hibernate-mapping>
+	<class name="beans.Movies" table="movie" schema="localoms">
+		<id name="mid" />
+		<property name="moviename" />
+	</class>
+</hibernate-mapping>
+
